@@ -90,9 +90,6 @@ finally
     }
     finally
     {
-        if ($farm.BuildVersion.Major -eq 16 -and $farm.BuildVersion.Build -lt 10000)
-        {
-            Write-Host "Run 'iisreset /noforce' manually." -ForegroundColor Yellow;
-        }
+        Write-Host "Run 'iisreset /noforce' manually." -ForegroundColor Yellow;
     }
 }
