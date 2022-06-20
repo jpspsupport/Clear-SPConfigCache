@@ -14,7 +14,7 @@ if ((Get-PSSnapin | ? { $_.Name -eq "Microsoft.SharePoint.PowerShell" }) -eq $nu
     Add-PSSnapin Microsoft.SharePoint.PowerShell;
 }
 
-Write-Host "Stopping SharPoint Timer Service ..." -ForegroundColor Yellow;
+Write-Host "Stopping SharePoint Timer Service ..." -ForegroundColor Yellow;
 try
 {
     Stop-Service "SPTimerV4";
@@ -24,7 +24,7 @@ catch
     Write-Host "Failed to stop SharePoint Timer Service." -ForegroundColor Red;
     Exit;
 }
-Write-Host "Succeeded to stop SharPoint Timer Service." -ForegroundColor Green;
+Write-Host "Succeeded to stop SharePoint Timer Service." -ForegroundColor Green;
 
 try
 {
@@ -77,12 +77,12 @@ catch
 }
 finally
 {
-    Write-Host "Restarting SharPoint Timer Service ..." -ForegroundColor Yellow;
+    Write-Host "Restarting SharePoint Timer Service ..." -ForegroundColor Yellow;
 
     try
     {
         Start-Service "SPTimerV4";
-        Write-Host "Succeeded to restart SharPoint Timer Service." -ForegroundColor Green;
+        Write-Host "Succeeded to restart SharePoint Timer Service." -ForegroundColor Green;
     }
     catch
     {
